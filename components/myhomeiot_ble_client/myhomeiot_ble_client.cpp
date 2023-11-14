@@ -23,7 +23,7 @@ void MyHomeIOT_BLEClient::dump_config() {
 }
 
 void MyHomeIOT_BLEClient::loop() {
-  if ((this->state_ == MYHOMEIOT_DISCOVERED() && (pause_me == false))
+  if ((this->state_ == MYHOMEIOT_DISCOVERED) && (pause_me == false))
     this->connect();
   else if (this->state_ == MYHOMEIOT_ESTABLISHED)
     this->disconnect();
