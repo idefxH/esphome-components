@@ -11,7 +11,7 @@ static const char *const TAG = "myhomeiot_ble_client";
 
 void MyHomeIOT_BLEClient::setup() {
   this->state_ = MYHOMEIOT_IDLE;
-  this.pause_me=false;
+  this->pause_me=false;
 }
 
 void MyHomeIOT_BLEClient::dump_config() {
@@ -23,7 +23,7 @@ void MyHomeIOT_BLEClient::dump_config() {
 }
 
 void MyHomeIOT_BLEClient::loop() {
-  if ((this->state_ == MYHOMEIOT_DISCOVERED) && (this.pause_me == false))
+  if ((this->state_ == MYHOMEIOT_DISCOVERED) && (this->pause_me == false))
     this->connect();
   else if (this->state_ == MYHOMEIOT_ESTABLISHED)
     this->disconnect();
