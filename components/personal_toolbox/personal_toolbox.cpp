@@ -1,7 +1,7 @@
 #pragma once
 
 #include <stdio.h>
-
+#include "display_buffer.h"
 #include <string>
 #include <vector>
 
@@ -12,6 +12,7 @@ struct x_y_coordinates{
 
 class screen_tile
 {
+    auto it;    
     x_y_coordinates top_left;
     x_y_coordinates top_right;
     x_y_coordinates bnottom_left;
