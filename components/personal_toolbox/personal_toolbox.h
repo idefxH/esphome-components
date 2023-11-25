@@ -3,7 +3,7 @@
 #include "esphome.h"
 #include <string>
 #include <vector>
-public class personal_toolbox : public PollingComponent
+public class PersonalToolbox : public PollingComponent
 {
 public:
     void setup() override;
