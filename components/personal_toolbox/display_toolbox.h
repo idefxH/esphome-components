@@ -21,7 +21,7 @@ struct x_y_coordinates{
     x_y_coordinates top_right;
     x_y_coordinates bottom_left;
     x_y_coordinates bottom_right;
-    void display_it(esphome:font:Font *f){
+    void display_it(esphome::font::Font *f){
         it.printf(200,100,f, "TEST");
     }
     
