@@ -13,8 +13,8 @@ struct x_y_coordinates{
  class DisplayTile
 {
     public:
-    esphome::display::Display *provided_display;
-    DisplayTile(esphome::display::Display *it) : provided_display(it) {
+    esphome::display::Display &provided_display;
+    DisplayTile(esphome::display::Display &it) : provided_display(it) {
 
     }
     x_y_coordinates top_left;
