@@ -13,7 +13,7 @@ struct x_y_coordinates{
 
 class screen_tile
 {
-    esphome::LilygoT547Display test;
+    lilygo_t5_47::LilygoT547Display test;
     x_y_coordinates top_left;
     x_y_coordinates top_right;
     x_y_coordinates bottom_left;
