@@ -13,7 +13,7 @@ struct x_y_coordinates{
 class screen_tile
 {
     static lilygo_t5_47::LilygoT547Display *provided_display;
-    screen_tile(lilygo_t5_47::LilygoT547Display *it){
+    public screen_tile(lilygo_t5_47::LilygoT547Display *it){
         provided_display=it;
     }
     x_y_coordinates top_left;
