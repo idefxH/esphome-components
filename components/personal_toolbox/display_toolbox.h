@@ -12,11 +12,7 @@ struct x_y_coordinates{
 
 class screen_tile
 {
-<<<<<<< HEAD
-    lilygo_t5_47::LilygoT547Display &provided_display;
-=======
     static lilygo_t5_47::LilygoT547Display &provided_display;
->>>>>>> 74600ad (sdfdsfsd)
     screen_tile(lilygo_t5_47::LilygoT547Display &it){
         provided_display=it;
     }
