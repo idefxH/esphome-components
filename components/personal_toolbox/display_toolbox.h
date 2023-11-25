@@ -23,7 +23,7 @@ struct x_y_coordinates{
     };
 
     void display_it(esphome::font::Font *f,esphome::display::Display &it ){
-        it.printf(bottom_right.x-top_left.x,bottom_right.y-top_left.y,f,TextAlign::TOP_CENTER, "TEST");
+        it.printf(top_left.x+((bottom_right.x-top_left.x)/2),top_left.y+((bottom_right.y-top_left.y)/2),f,TextAlign::TOP_CENTER, "TEST");
     }
     
 };
