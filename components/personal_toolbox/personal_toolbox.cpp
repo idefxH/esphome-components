@@ -127,11 +127,16 @@ void encode_bytes(std::vector<uint8_t> input, std::vector<uint8_t> &output)
     // output[curr_target_byte_pos+1] = 0;
     return;
 }
+class personal_toolbox : public PollingComponent
+{
+public:
+    void setup() override
+    {
+        // This will be called by App.setup()
+    }
+    void update() override
+    {
+        // This will be called by App.loop()
+    }
+};
 
-
-class screen_tile{
-    x_y_coordinates top_left;
-    x_y_coordinates top_right;
-    x_y_coordinates bnottom_left;
-    x_y_coordinates bnottom_right;
-}
