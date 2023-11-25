@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 #include <variant>
-#include "components/display/lilygo_t5_47_display.h"
+#include "display/lilygo_t5_47_display.h"
 struct x_y_coordinates{
     int x;
     int y;
