@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <string>
 #include <vector>
-#include <any>
+#include <variant>
 struct x_y_coordinates{
     int x;
     int y;
@@ -11,8 +11,9 @@ struct x_y_coordinates{
 
 class screen_tile
 {
-    static std::any it;    
-    screen_tile(std::any provided_it){
+    static std::variant it;
+    screen_tile(std::variant provided_it)
+    {
         it=provided_it;
         it->update();
     }
