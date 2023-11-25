@@ -6,8 +6,6 @@
 #include <variant>
 #include "esphome.h"
 
-//#include "display_buffer.h"
-
 struct x_y_coordinates{
     int x;
     int y;
@@ -15,7 +13,7 @@ struct x_y_coordinates{
 
 class screen_tile
 {
-    esphome::DisplayBuffer test;
+    esphome::display::DisplayBuffer test;
     x_y_coordinates top_left;
     x_y_coordinates top_right;
     x_y_coordinates bottom_left;
