@@ -17,11 +17,7 @@ class screen_tile
     x_y_coordinates bnottom_left;
     x_y_coordinates bottom_right;
 };
-struct x_y_coordinates
-{
-    int x;
-    int y;
-};
+
 
 #define FMT_BUF_SIZE (CHAR_BIT * sizeof(uint8_t) + 1)
 extern const std::vector<uint8_t>
