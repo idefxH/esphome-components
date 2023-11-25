@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <string>
 #include <vector>
-
+#include <any>
 struct x_y_coordinates{
     int x;
     int y;
@@ -11,7 +11,11 @@ struct x_y_coordinates{
 
 class screen_tile
 {
-    auto it;    
+    static std::any it;    
+    screen_tile(std::any provided_it){
+        it=provided_it;
+        it->update();
+    }
     x_y_coordinates top_left;
     x_y_coordinates top_right;
     x_y_coordinates bnottom_left;
