@@ -1,4 +1,4 @@
-#pragma once
+#pragma onceas
 #include <stdio.h>
 #include "esphome.h"
 #include <string>
