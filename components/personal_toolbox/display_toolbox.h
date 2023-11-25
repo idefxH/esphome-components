@@ -10,7 +10,7 @@ struct x_y_coordinates{
     int y;
 };
 
-class screen_tile
+public class screen_tile
 {
     lilygo_t5_47::LilygoT547Display *provided_display;
     screen_tile(lilygo_t5_47::LilygoT547Display *it) : provided_display(it) {
