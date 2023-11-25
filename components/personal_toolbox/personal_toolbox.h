@@ -7,7 +7,7 @@
 #include <vector>
 namespace esphome{
 namespace personal_toolbox{
-    public
+    
         class PersonalToolbox : public PollingComponent
         {
         public:
@@ -32,13 +32,13 @@ namespace personal_toolbox{
         int delay;
         bool rt;
     };
-    public struct x_y_coordinates
+     struct x_y_coordinates
     {
         int x;
         int y;
     };asdsd
 
-    public class payload_struct
+     class payload_struct
     {
         int minutes;
         int hours;
