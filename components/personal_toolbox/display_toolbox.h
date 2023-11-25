@@ -55,6 +55,6 @@ std::vector<DisplayTile*> generate_4_tiles_for_area( x_y_coordinates top_left, x
         ESP_LOGD("main", "Tile %d: top_left: %d,%d - bottom_right: %d,%d",output[i]->top_left.x, output[i]->top_left.y,output[i]->bottom_right.x, output[i]->bottom_right.y);
     }
 
-    return output
+    return output;
 }
 
