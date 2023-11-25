@@ -30,7 +30,7 @@ public struct x_y_coordinates
 {
     int x;
     int y;
-};
+};asdsd
 
 public class payload_struct
 {
