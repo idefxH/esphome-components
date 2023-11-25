@@ -4,7 +4,8 @@
 #include <string>
 #include <vector>
 #include <variant>
-#include "esphome/components/display/display_buffer.h"
+//#include "display_buffer.h"
+
 struct x_y_coordinates{
     int x;
     int y;
@@ -12,17 +13,11 @@ struct x_y_coordinates{
 
 class screen_tile
 {
-    static display::DisplayBuffer it;
-    screen_tile(esphome::LilygoT547Display provided_it)
-    {
-        it=provided_it;
-        it->update();
-    }
+    esphome::display::DisplayBuffer test;
     x_y_coordinates top_left;
     x_y_coordinates top_right;
-    x_y_coordinates bnottom_left;
+    x_y_coordinates bottom_left;
     x_y_coordinates bottom_right;
-
 };
 
 
