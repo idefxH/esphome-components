@@ -13,8 +13,8 @@ struct x_y_coordinates{
  class DisplayTile
 {
     public:
-    lilygo_t5_47::LilygoT547Display *provided_display;
-    DisplayTile(lilygo_t5_47::LilygoT547Display *it) : provided_display(it) {
+    esphome::display::Display& *provided_display;
+    DisplayTile(esphome::display::Display& *it) : provided_display(it) {
 
     }
     x_y_coordinates top_left;
