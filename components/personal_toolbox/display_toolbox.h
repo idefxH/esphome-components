@@ -16,14 +16,23 @@ struct x_y_coordinates{
     public:
     x_y_coordinates top_left;
     x_y_coordinates bottom_right;
+    std::string title;
+    std::string content;
+    std::string icon;
+
+
     //esphome::display::Display &provided_display;
     //DisplayTile(esphome::display::Display &it) : provided_display(it) {
+    //DisplayTile(x_y_coordinates tl, x_y_coordinates br,  std::string t,  std::string c,  std::string i) : top_left(tl), bottom_right(br),title(t),content(c),icon(i){
     DisplayTile(x_y_coordinates tl, x_y_coordinates br) : top_left(tl), bottom_right(br){
 
     };
 
-    void display_it(esphome::font::Font *f,esphome::display::Display &it ){
-        it.printf(top_left.x+((bottom_right.x-top_left.x)/2),top_left.y+((bottom_right.y-top_left.y)/2),f,TextAlign::TOP_CENTER, "TEST");
+    void display_it(esphome::font::Font *f,esphome::font::Font *f_icon,esphome::display::Display &it ){
+        it.printf(top_left.x+((bottom_right.x-top_left.x)/2),top_left.y,f_icon,TextAlign::TOP_CENTER, "");
+        it.printf(top_left.x+((bottom_right.x-top_left.x)/2),top_left.y+((bottom_right.y-top_left.y)/2),f,TextAlign::TOP_CENTER, content);
+        it.printf(top_left.x+((bottom_right.x-top_left.x)/2),top_left.y,f_icon,TextAlign::BOTTOM_CENTER, title);
+
     }
     
 };
