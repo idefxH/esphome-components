@@ -32,7 +32,7 @@ struct x_y_coordinates{
         it.printf(top_left.x+((bottom_right.x-top_left.x)/2),top_left.y,f_icon,TextAlign::TOP_CENTER, "");
         ESP_LOGD("main","Title %s",title.c_str());
         it.printf(top_left.x+((bottom_right.x-top_left.x)/2),top_left.y+((bottom_right.y-top_left.y)/2),f,TextAlign::TOP_CENTER, title.c_str());
-       // it.printf(top_left.x+((bottom_right.x-top_left.x)/2),top_left.y,f,TextAlign::BOTTOM_CENTER, title.c_str());
+        it.printf(top_left.x+((bottom_right.x-top_left.x)/2),top_left.y,f,TextAlign::BOTTOM_CENTER, content.c_str());
 
     }
     
