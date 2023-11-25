@@ -13,8 +13,8 @@ struct x_y_coordinates{
 class screen_tile
 {
     static lilygo_t5_47::LilygoT547Display *provided_display;
-    public screen_tile(lilygo_t5_47::LilygoT547Display *it) : provided_display {
-        provided_display=it;
+    screen_tile(lilygo_t5_47::LilygoT547Display *it) : provided_display(it) {
+
     }
     x_y_coordinates top_left;
     x_y_coordinates top_right;
@@ -25,3 +25,5 @@ class screen_tile
     }
     
 };
+lilygo_t5_47::LilygoT547Display* screen_tile::provided_display = nullptr;
+
