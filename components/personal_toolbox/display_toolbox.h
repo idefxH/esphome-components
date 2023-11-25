@@ -21,7 +21,7 @@ class screen_tile
     x_y_coordinates bottom_left;
     x_y_coordinates bottom_right;
     void display_it(){
-        provided_display.update();
+        provided_display->update();
     }
     
 };
