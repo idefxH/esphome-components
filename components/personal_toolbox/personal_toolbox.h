@@ -1,8 +1,21 @@
 #pragma once
 #include <stdio.h>
+#include "esphome.h"
 #include <string>
 #include <vector>
-
+class personal_toolbox : public PollingComponent
+{
+public:
+    void setup() override;
+    void update() override;
+};
+class screen_tile
+{
+    x_y_coordinates top_left;
+    x_y_coordinates top_right;
+    x_y_coordinates bnottom_left;
+    x_y_coordinates bnottom_right;
+}
 #define FMT_BUF_SIZE (CHAR_BIT * sizeof(uint8_t) + 1)
 namespace esphome{
 extern const std::vector<uint8_t> payload_segment_length_vector;
@@ -19,6 +32,7 @@ struct x_y_coordinates
     int x;
     int y;
 };
+
 struct payload_struct
 {
     int minutes;
