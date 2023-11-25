@@ -1,8 +1,9 @@
-#pragma onceas
+#pragma once
 #include <stdio.h>
 #include "esphome.h"
 #include <string>
 #include <vector>
+namespace (esphome){
 public class PersonalToolbox : public PollingComponent
 {
 public:
@@ -53,3 +54,4 @@ public class payload_struct
 void decode_bytes(std::vector<uint8_t> input, std::vector<uint8_t> &output);
 void decode_to_struct(std::vector<uint8_t> input, payload_struct &output);
 void encode_bytes(std::vector<uint8_t> input, std::vector<uint8_t> &output);
+}
