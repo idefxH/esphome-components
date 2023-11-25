@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 #include <variant>
-#include "../esphome/components/display/display_buffer.h"
+#include "../../esphome/components/display/display_buffer.h"
 struct x_y_coordinates{
     int x;
     int y;
