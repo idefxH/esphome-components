@@ -22,7 +22,7 @@ struct x_y_coordinates{
     x_y_coordinates bottom_left;
     x_y_coordinates bottom_right;
     void display_it(esphome::font::Font *f){
-        provided_display->printf(200,100,f, "TEST");
+        provided_display.printf(200,100,f, "TEST");
     }
     
 };
