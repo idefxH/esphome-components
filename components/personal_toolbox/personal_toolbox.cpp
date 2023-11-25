@@ -5,6 +5,7 @@
 #include <vector>
 #include <variant>
 #include "esphome.h"
+#include <display_buffer.h>
 
 struct x_y_coordinates{
     int x;
