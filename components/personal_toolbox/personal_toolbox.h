@@ -14,7 +14,7 @@ class screen_tile
     x_y_coordinates top_left;
     x_y_coordinates top_right;
     x_y_coordinates bnottom_left;
-    x_y_coordinates bnottom_right;
+    x_y_coordinates bottom_right;
 }
 #define FMT_BUF_SIZE (CHAR_BIT * sizeof(uint8_t) + 1)
 namespace esphome{
@@ -27,13 +27,13 @@ struct bus_run
     int delay;
     bool rt;
 };
-struct x_y_coordinates
+public struct x_y_coordinates
 {
     int x;
     int y;
 };
 
-struct payload_struct
+public class payload_struct
 {
     int minutes;
     int hours;
