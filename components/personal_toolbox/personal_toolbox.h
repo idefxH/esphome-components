@@ -4,7 +4,7 @@
 #include <vector>
 
 #define FMT_BUF_SIZE (CHAR_BIT * sizeof(uint8_t) + 1)
-
+namespace esphome{
 extern const std::vector<uint8_t> payload_segment_length_vector;
 
 const char *byte_to_binary(uint8_t x);
@@ -14,7 +14,11 @@ struct bus_run
     int delay;
     bool rt;
 };
-
+struct x_y_coordinates
+{
+    int x;
+    int y;
+};
 struct payload_struct
 {
     int minutes;
@@ -36,3 +40,4 @@ struct payload_struct
 void decode_bytes(std::vector<uint8_t> input, std::vector<uint8_t> &output);
 void decode_to_struct(std::vector<uint8_t> input, payload_struct &output);
 void encode_bytes(std::vector<uint8_t> input, std::vector<uint8_t> &output);
+}
