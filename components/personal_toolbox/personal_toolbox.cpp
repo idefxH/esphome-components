@@ -133,10 +133,12 @@ class PersonalToolbox : public PollingComponent
 public:
     void setup() override
     {
+        return;
         // This will be called by App.setup()
     }
     void update() override
     {
+        return;
         // This will be called by App.loop()
     }
 };
