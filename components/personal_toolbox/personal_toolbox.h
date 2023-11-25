@@ -36,7 +36,7 @@ namespace personal_toolbox{
     {
         int x;
         int y;
-    };asdsd
+    };
 
      class payload_struct
     {
