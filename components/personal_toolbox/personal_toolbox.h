@@ -3,7 +3,7 @@
 #include "esphome.h"
 #include <string>
 #include <vector>
-namespace (esphome){
+namespace esphome{
 public class PersonalToolbox : public PollingComponent
 {
 public:
