@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <variant>
+#include "esphome/components/display/lilygo_t5_47_display.h"
 struct x_y_coordinates{
     int x;
     int y;
@@ -11,8 +12,8 @@ struct x_y_coordinates{
 
 class screen_tile
 {
-    static std::variant it;
-    screen_tile(std::variant provided_it)
+    static esphome::LilygoT547Display it;
+    screen_tile(esphome::LilygoT547Display provided_it)
     {
         it=provided_it;
         it->update();
