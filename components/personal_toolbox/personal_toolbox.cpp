@@ -4,6 +4,12 @@
 
 #include <string>
 #include <vector>
+
+struct x_y_coordinates{
+    int x;
+    int y;
+};
+
 class screen_tile
 {
     x_y_coordinates top_left;
