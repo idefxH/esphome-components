@@ -126,10 +126,11 @@ void decode_to_struct(std::vector<uint8_t> input)
     payload_data.hours = buffer[0];
     payload_data.minutes = buffer[1];
     for (int i=0; i<4;i++){
-        payload_data.buses[i].runs[i].delay = buffer[2+(i*4)];  
-        payload_data.buses[i].runs[i].rt  = buffer[3+(i*4)]; 
-        payload_data.buses[i].runs[i+1].delay = buffer[4+(i*4)];  
-        payload_data.buses[i].runs[i+1].rt  = buffer[5+(i*4)]; 
+        for (int j=0; j<2; j++){
+            payload_data.buses[i].runs[j].delay = buffer[2+j+(i*4)];  
+            payload_data.buses[i].runs[j].rt  = buffer[3+j+(i*4)]; 
+
+        }
     }
     return;
 }
