@@ -19,7 +19,7 @@ struct x_y_coordinates{
     x_y_coordinates bottom_right;
     std::string title;
     std::string content;
-    std::string icon;
+    char icon;
 
 
     //esphome::display::Display &provided_display;
@@ -30,8 +30,7 @@ struct x_y_coordinates{
     };
 
     void display_it(esphome::font::Font *f,esphome::font::Font *f_icon,esphome::display::Display &it ){
-        it.printf(top_left.x+((bottom_right.x-top_left.x)/2),top_left.y,f_icon,TextAlign::TOP_CENTER, "");
-        ESP_LOGD("main","Content %s",content.c_str());
+        it.printf(top_left.x+((bottom_right.x-top_left.x)/2),top_left.y,f_icon,TextAlign::TOP_CENTER, icon);
         it.printf(top_left.x+((bottom_right.x-top_left.x)/2),top_left.y+((bottom_right.y-top_left.y)/2),f,TextAlign::TOP_CENTER, title.c_str());
         it.printf(top_left.x+((bottom_right.x-top_left.x)/2),top_left.y+((bottom_right.y-top_left.y)/2),f,TextAlign::BOTTOM_CENTER, content.c_str());
 
@@ -63,6 +62,11 @@ std::vector<DisplayTile*> generate_4_tiles_for_area( x_y_coordinates top_left, x
     buff_2.y=bottom_right.y;
     output.push_back(new DisplayTile(buff_1, buff_2));
 
+    for(int i =0; i<4; i++){
+        output[i]->title=payload_data.buses[i].name;
+        output[i]->icon=payload_data.buses[i].icon;
+
+    }
     return output;
 }
 
