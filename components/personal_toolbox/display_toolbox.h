@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <variant>
+#include <encode-decode.h>
 
 struct x_y_coordinates{
     int x;
