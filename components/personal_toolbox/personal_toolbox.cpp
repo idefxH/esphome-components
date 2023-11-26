@@ -39,6 +39,7 @@ struct payload_struct
     rain rains[4];
 };
 
+payload_struct payload_data;
 const char *byte_to_binary(uint8_t x)
 {
     static char b[sizeof(uint8_t) * 8 + 1] = {0};
@@ -176,4 +177,4 @@ void encode_bytes(std::vector<uint8_t> input, std::vector<uint8_t> &output)
     // output[curr_target_byte_pos+1] = 0;
     return;
 }
-payload_struct payload_data;
+
