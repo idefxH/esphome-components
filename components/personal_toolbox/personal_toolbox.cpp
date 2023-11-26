@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 #include <variant>
-#include "esphome.h"
+
 
 
 
@@ -20,23 +20,23 @@ struct bus_run
     bool rt;
 };
 
+struct bus_dest
+{
+    bus_run runs[2];
+    std::string name;
+};
+
+struct rain{
+    std::string name;
+    bool probablity;
+};
 
 struct payload_struct
 {
     int minutes;
     int hours;
-    bus_run pully_1[2];
-    bus_run pully_2[2];
-    bus_run sainf_1[2];
-    bus_run sainf_2[2];
-    bus_run metro_1[2];
-    bus_run metro_2[2];
-    bus_run paudex_1[2];
-    bus_run paudex_2[2];
-    bool rain_1h;
-    bool rain_2h;
-    bool rain_4h;
-    bool rain_12h;
+    bus_dest buses[4];
+    rain rains[4];
 };
 
 const char *byte_to_binary(uint8_t x)
@@ -97,6 +97,17 @@ decode_bytes(std::vector<uint8_t> input, std::vector<uint8_t> &output)
     }
 }
 
+void init_struct(payload_struct &output){
+    output.buses[0].name ="Pully";
+    output.buses[1].name ="Délices";
+    output.buses[2].name ="Centre";
+    output.buses[3].name ="Paudex";
+    output.rains[0].name = "1h";
+    output.rains[1].name = "2h";
+    output.rains[2].name = "4h";
+    output.rains[3].name = "8h";
+}
+
 void decode_to_struct(std::vector<uint8_t> input, payload_struct &output)
 {
     std::vector<uint8_t> buffer;
@@ -107,8 +118,8 @@ void decode_to_struct(std::vector<uint8_t> input, payload_struct &output)
     decode_bytes(input, buffer);
     output.hours = buffer[0];
     output.minutes = buffer[1];
-    output.pully_1->delay = buffer[2];
-    output.pully_1->rt = buffer[3];
+    output.buses[0].runs[0].delay = buffer[2];
+    output.buses[0].runs[0].rt  = buffer[3];
     return;
 }
 
