@@ -106,7 +106,7 @@ void init_struct(){
     payload_data.buses[1].name ="Délices";
     payload_data.buses[1].icon ="";
     payload_data.buses[2].name ="Centre";
-    payload_data.buses[2].icon ="";
+    payload_data.buses[2].icon ="";
     payload_data.buses[3].name ="Paudex";
     payload_data.buses[3].icon ="";  
     payload_data.rains[0].name = "1h";
@@ -125,8 +125,12 @@ void decode_to_struct(std::vector<uint8_t> input)
     decode_bytes(input, buffer);
     payload_data.hours = buffer[0];
     payload_data.minutes = buffer[1];
-    payload_data.buses[0].runs[0].delay = buffer[2];
-    payload_data.buses[0].runs[0].rt  = buffer[3];
+    for (int i=0; i<4;i++){
+        payload_data.buses[i].runs[i].delay = buffer[2+(i*4)];  
+        payload_data.buses[i].runs[i].rt  = buffer[3+(i*4)]; 
+        payload_data.buses[i].runs[i+1].delay = buffer[4+(i*4)];  
+        payload_data.buses[i].runs[i+1].rt  = buffer[5+(i*4)]; 
+    }
     return;
 }
 
