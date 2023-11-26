@@ -19,7 +19,7 @@ struct x_y_coordinates{
     x_y_coordinates bottom_right;
     std::string title;
     std::string content;
-    char icon;
+    std::string icon;
 
 
     //esphome::display::Display &provided_display;
