@@ -97,18 +97,18 @@ decode_bytes(std::vector<uint8_t> input, std::vector<uint8_t> &output)
     }
 }
 
-void init_struct(payload_struct &output){
-    output.buses[0].name ="Pully";
-    output.buses[1].name ="Délices";
-    output.buses[2].name ="Centre";
-    output.buses[3].name ="Paudex";
-    output.rains[0].name = "1h";
-    output.rains[1].name = "2h";
-    output.rains[2].name = "4h";
-    output.rains[3].name = "8h";
+void init_struct(){
+    payload_data.buses[0].name ="Pully";
+    payload_data.buses[1].name ="Délices";
+    payload_data.buses[2].name ="Centre";
+    payload_data.buses[3].name ="Paudex";
+    payload_data.rains[0].name = "1h";
+    payload_data.rains[1].name = "2h";
+    payload_data.rains[2].name = "4h";
+    payload_data.rains[3].name = "8h";
 }
 
-void decode_to_struct(std::vector<uint8_t> input, payload_struct &output)
+void decode_to_struct(std::vector<uint8_t> input)
 {
     std::vector<uint8_t> buffer;
     for (uint8_t i = 0; i < payload_segment_length_vector.size() + 1; i++)
@@ -116,10 +116,10 @@ void decode_to_struct(std::vector<uint8_t> input, payload_struct &output)
         buffer.push_back(0);
     }
     decode_bytes(input, buffer);
-    output.hours = buffer[0];
-    output.minutes = buffer[1];
-    output.buses[0].runs[0].delay = buffer[2];
-    output.buses[0].runs[0].rt  = buffer[3];
+    payload_data.hours = buffer[0];
+    payload_data.minutes = buffer[1];
+    payload_data.buses[0].runs[0].delay = buffer[2];
+    payload_data.buses[0].runs[0].rt  = buffer[3];
     return;
 }
 
@@ -176,3 +176,4 @@ void encode_bytes(std::vector<uint8_t> input, std::vector<uint8_t> &output)
     // output[curr_target_byte_pos+1] = 0;
     return;
 }
+payload_struct payload_data;
