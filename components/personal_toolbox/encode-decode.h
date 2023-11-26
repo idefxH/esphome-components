@@ -24,7 +24,7 @@ struct bus_dest
 {
     bus_run runs[2];
     std::string name;
-    char icon;
+    std::string icon;
 
 };
 
@@ -102,15 +102,15 @@ decode_bytes(std::vector<uint8_t> input, std::vector<uint8_t> &output)
 
 void init_struct(){
     payload_data.buses[0].name ="Pully";
-    payload_data.buses[0].icon ='';
+    payload_data.buses[0].icon ="";
     payload_data.buses[1].name ="Délices";
-    payload_data.buses[1].icon ='';
+    payload_data.buses[1].icon ="";
     payload_data.buses[2].name ="Centre";
-    payload_data.buses[2].icon ='';
+    payload_data.buses[2].icon ="";
     payload_data.buses[3].name ="Paudex";
-    payload_data.buses[3].icon ='';  
+    payload_data.buses[3].icon ="";  
     payload_data.rains[0].name = "1h";
-    payload_data.rains[1].name = "2h";d
+    payload_data.rains[1].name = "2h";
     payload_data.rains[2].name = "4h";
     payload_data.rains[3].name = "8h";
 }
